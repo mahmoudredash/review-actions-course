@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest #,windows-latest, macos
     
     # Steps repesent a sequenve of tasks that will be executed as part of the job
-    setps:
+    steps:
       # Checksout your repository under $GITHUB_WORKSPACE, so you  job can access it 
       - uses: actions/checkout@v3
       
