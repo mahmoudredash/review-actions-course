@@ -1,0 +1,36 @@
+# this is a basic workflow to help you get started with actions 
+
+name: ACI
+
+# controller when the workflow will run 
+
+on:
+# Triggers the workflow on push or pull request but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+# Allow you to  run this workforw manually from the actions tap
+  workflow_dispatch: 
+
+jobs:
+# this type of rummer that the job will run on 
+  build-on-release:
+    # the type of runner that the job will run on 
+    runs-on: ubuntu-latest #,windows-latest, macos
+    
+    # Steps repesent a sequenve of tasks that will be executed as part of the job
+    setps:
+      # Checksout your repository under $GITHUB_WORKSPACE, so you  job can access it 
+      - uses: actions/checkout@v3
+      
+      # Runs a sngle command using the runners she
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+      # run a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo add other actions to bulid,
+          echo test, and deploy your project
