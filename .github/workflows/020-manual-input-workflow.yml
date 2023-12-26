@@ -1,0 +1,22 @@
+# this is basic workflow that is manually triggered
+
+name: 020-manual-input-workflow
+
+# Controls when the action will run . workflow runs manually triggered using  the ui
+# or API
+on:
+  workflow_dispatch:
+    # input  the workflow accepts
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+        required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: send greeting
+      run: echo "Hello ${{githup.event.input.name}}"
